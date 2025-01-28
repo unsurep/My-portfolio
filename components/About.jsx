@@ -34,9 +34,19 @@ const About = () => {
         <div className='my-28 px-0 md:px-10  text-left md:  '>
             <h4 className='text-xl lg:text-2xl mb-6 font-semibold lg:pt-[6rem]'>Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span>  background</h4>
 
-            <p className='text-xs lg:text-base '>I am Louis, result-driven with over 10 years of experience <br /> in administration, 
-                client relations and operational management. <br />  Demonstrates excellent skills in leadership, organizing and  <br /> communication,  with a proven ability to manage multiple tasks efficiently <br /> and contribute to team success. <br /> Recently upskilled in  modern digital tools and web technologies, <br /> combining strong  administrative expertise with problem-solving <br /> abilities to drive  organizational growth. <br />
-            Possesses solid frontend development knowledge, including proficiency <br /> in HTML 5, CSS, Tailwind CSS,  JavaScript, React, and Next.js <br />, as well as basic backend skills in  user authentication and database integration. <br /> Competent at  creating responsive, user-friendly web interfaces <br /> and leveraging  technical expertise to streamline processes and improve efficiency. <br />  Seeking a challenging position that allows me to utilize my administrative  background, technical skills, <br /> and continuous learning mindset to  deliver innovative solutions and achieve organizational goals.</p>
+            <p className='text-xs lg:text-base '>I am Louis, result-driven with over 10 years of experience  in administration,
+            client <br /> relations and operational management.   Demonstrates excellent skills in leadership, <br /> organizing and  communication, with a proven ability to manage multiple tasks <br /> efficiently and contribute to team success. 
+            </p>
+
+            <p className='pt-5'>
+                Recently upskilled in  modern digital tools and web technologies,  combining <br /> strong  administrative expertise with problem-solving  abilities to drive <br /> drive  organizational growth. 
+            </p>
+
+            <p className='pt-5'>
+                Possesses solid frontend development knowledge, including proficiency  in HTML 5, <br /> CSS, Tailwind CSS,  JavaScript, React, and Next.js ,as well as basic backend skills <br /> in  user authentication and database integration. Competent at  creating responsive, <br /> user-friendly web interfaces  and leveraging  technical expertise to streamline <br /> processes and improve efficiency. Seeking a challenging position that allows me <br /> to utilize my administrative  background, technical skills, and continuous learning <br />
+                mindset to  deliver innovative solutions and achieve organizational goals.
+
+            </p>
         </div>
     </div>
     </section>

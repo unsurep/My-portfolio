@@ -1,9 +1,13 @@
 import About from '@/components/About'
-import WorkExperience from '@/components/Experience' 
+import WorkExperience from '@/components/WorkExperience' 
 import Hero from '@/components/Hero'
 import Nav from '@/components/Nav'
 import React from 'react'
-import { SocialIcon } from 'react-social-icons'
+import Skills from '@/components/Skills'
+import Skill from '@/components/Skill'
+
+
+
 
 const Home = () => {
   return (
@@ -11,7 +15,15 @@ const Home = () => {
       <Nav/>
       <Hero/>
       <About/>
-      <WorkExperience/>
+      <section className='snap-center' id='experience'>
+        <WorkExperience/>
+      </section>
+
+      <section id='skills' className='snap-start'>
+        <Skills/>
+        
+      </section>
+      
 
     </div>
   )
