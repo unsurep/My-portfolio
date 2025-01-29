@@ -11,7 +11,7 @@ const About = () => {
             initial={{opacity:0}}
             whileInView={{opacity:1}}
             transition={{duration:1.5}}
-            className='absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl '>About</motion.h3>
+            className='absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl '>About</motion.h3>
 
         <motion.div
             initial={{x:-200,
@@ -20,7 +20,7 @@ const About = () => {
             transition={{duration:1.2,}}
             whileInView={{ opacity:1, x:0, }}
             viewport={{once:true}}
-            className='mt-[7rem]'
+            className='mt-[10rem] items-center justify-center flex my-auto'
             >
             <Image 
                 src='/pic.jpg' 
@@ -31,18 +31,18 @@ const About = () => {
             />
         </motion.div>
 
-        <div className='my-28 px-0 md:px-10  text-left md:  '>
+        <div className='mt-36 lg:mt-16 pb-10 px-0 md:px-10  text-left md:  '>
             <h4 className='text-xl lg:text-2xl mb-6 font-semibold lg:pt-[6rem]'>Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span>  background</h4>
 
-            <p className='text-xs lg:text-base '>I am Louis, result-driven with over 10 years of experience  in administration,
+            <p className='text-sm lg:text-xl '>I am Louis, result-driven with over 10 years of experience  in administration,
             client <br /> relations and operational management.   Demonstrates excellent skills in leadership, <br /> organizing and  communication, with a proven ability to manage multiple tasks <br /> efficiently and contribute to team success. 
             </p>
 
-            <p className='pt-5'>
+            <p className='text-sm pt-3 lg:text-xl'>
                 Recently upskilled in  modern digital tools and web technologies,  combining <br /> strong  administrative expertise with problem-solving  abilities to drive <br /> drive  organizational growth. 
             </p>
 
-            <p className='pt-5'>
+            <p className='text-sm lg:text-xl pt-3'>
                 Possesses solid frontend development knowledge, including proficiency  in HTML 5, <br /> CSS, Tailwind CSS,  JavaScript, React, and Next.js ,as well as basic backend skills <br /> in  user authentication and database integration. Competent at  creating responsive, <br /> user-friendly web interfaces  and leveraging  technical expertise to streamline <br /> processes and improve efficiency. Seeking a challenging position that allows me <br /> to utilize my administrative  background, technical skills, and continuous learning <br />
                 mindset to  deliver innovative solutions and achieve organizational goals.
 

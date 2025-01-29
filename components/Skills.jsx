@@ -16,7 +16,7 @@ const Skills = () => {
 
         <h3 className='absolute top-32 uppercase tracking-[3px] text-gray-500 text-sm'>Hover over a skill for proficiency</h3>
 
-        <div className='grid grid-cols-4 gap-5'>
+        <div className='grid grid-cols-3 gap-5 mt-[6rem] lg:mt-[1rem]'>
            <Skill/>
            <Skill/>
            <Skill/>
@@ -26,11 +26,8 @@ const Skills = () => {
            <Skill/>
            <Skill/>
            <Skill/>
-           <Skill/>
-           <Skill/>
-           <Skill/>
-           <Skill/>
-           <Skill/>
+           
+          
         </div>
       
     </motion.div>

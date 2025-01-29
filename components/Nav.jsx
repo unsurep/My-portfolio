@@ -25,7 +25,8 @@ const Nav = () => {
         }}>
         
         <SocialIcon
-          url="https://linkedin.com"
+          url="https://linkedin.com/in/louisvwede"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
           network="linkedin"
@@ -33,7 +34,8 @@ const Nav = () => {
         />
 
         <SocialIcon
-          url="https://github.com"
+          url="https://github.com/unsurep"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
           network="github"
@@ -41,7 +43,8 @@ const Nav = () => {
         />
 
         <SocialIcon
-          url="https://tiktok.com"
+          url="https://www.tiktok.com/@onesureplayer?_t=ZM-8tSCSG1nYjG&_r=1"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
           network="tiktok"
@@ -49,7 +52,8 @@ const Nav = () => {
         />
 
         <SocialIcon
-          url="https://twitter.com"
+          url="https://x.com/LVwedee"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
           network="twitter"
@@ -57,7 +61,8 @@ const Nav = () => {
         />
 
         <SocialIcon
-          url="https://whatsapp.com"
+          url="https://wa.me/+2348081808904"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
           network="whatsapp"
@@ -83,7 +88,8 @@ const Nav = () => {
       }}
       >
         <SocialIcon
-          url="https://email.com"
+          url="mailto:wedevilleg@gmail.com"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
           network="email"
