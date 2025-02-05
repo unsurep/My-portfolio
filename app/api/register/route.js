@@ -17,7 +17,7 @@ export async function OPTIONS() {
 export async function POST(req) {
     try {
         // frontend incoming data
-        const {name, email, subject, message} = await res.json();
+        const {name, email, subject, message} = await req.json();
 
         // connect backend to db
         await dbConnect();
@@ -30,12 +30,12 @@ export async function POST(req) {
             return new NextResponse(JSON.stringify({msg:'Message not sent'}), {status:400, header: corsHeaders });
         }
 
-        else return new NextResponse(JSON.stringify({msg:'Message sent'}), {status:201, header: corsHeaders}
+        else return new NextResponse(JSON.stringify({msg:'Message sent'}), {status:201, headers: corsHeaders}
 
         );
     } 
     catch (error) {
-        return new NextResponse(JSON.stringify({msg:'Server error! Try later'}), {status:500, header: corsHeader });
+        return new NextResponse(JSON.stringify({msg:'Server error! Try later'}), {status:500, header: corsHeaders });
         
     }
 }

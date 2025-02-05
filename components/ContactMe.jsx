@@ -52,7 +52,7 @@ const ContactMe = () => {
 
 
             if (res.status===201) {
-                router.replace('/')
+                router.replace('/hero')
             }
 
             else {
@@ -107,8 +107,8 @@ const ContactMe = () => {
 
             <form onSubmit={submitHandler} className='flex flex-col space-y-2 w-fit mx-auto'>
                 <div className='flex space-x-2'>
-                    <input onChange={(e)=>setName(e.target.value)} placeholder='Name' className='contactInput' type="text" />
-                    <input onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='contactInput' type="email" />
+                    <input value={name} onChange={(e)=>setName(e.target.value)} placeholder='Name' className='contactInput' type="text" />
+                    <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='contactInput' type="email" />
                 </div>
 
                 <input onChange={(e)=>setSubject(e.target.value)} placeholder='Subject' className='contactInput' type="text" />
