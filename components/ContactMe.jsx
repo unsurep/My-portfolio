@@ -38,8 +38,18 @@ const ContactMe = () => {
         setLoading(true);
         setError('');
 
+        // this frontend api is configured to all cors
         try {
-            const res = await axios.post ('http://localhost:3000/api/register', {name, email, subject, message});
+            const res = await axios.post (`${process.env.NEXT_PUBLIC_ENDPOINT}/register`, {name, email, subject, message},
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    withCredentials:false // Set to true if using authentication tokens
+                }
+
+            );
+
 
             if (res.status===201) {
                 router.replace('/')

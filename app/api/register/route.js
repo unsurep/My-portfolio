@@ -2,8 +2,19 @@ import { dbConnect } from "@/utilities/dbConnect";
 import registerModel from "@/models/register";
 import { NextResponse } from "next/server";
 
+// Enable CORS
+const corsHeaders = {
+    "Access-Control-Allow-Origin": "*", // Allow all origins (change to your frontend URL in production)
+    "Access-Control-Allow-Methods": "POST, OPTIONS", // Allow only POST and OPTIONS
+    "Access-Control-Allow-Headers": "Content-Type, Authorization", // Allow necessary headers
+};
 
-export const POST =async (res)=>{
+export async function OPTIONS() {
+    return new NextResponse(null, { status: 200, headers: corsHeaders });
+}
+
+
+export async function POST(req) {
     try {
         // frontend incoming data
         const {name, email, subject, message} = await res.json();
@@ -11,20 +22,20 @@ export const POST =async (res)=>{
         // connect backend to db
         await dbConnect();
 
-        // storing frontend valies to the database
+        // save messages on the database
         const user = new registerModel ({name, email, subject, message});
         await user.save();
 
         if (!user){
-            return new NextResponse(JSON.stringify({msg:'message not sent'}), {status:400});
+            return new NextResponse(JSON.stringify({msg:'Message not sent'}), {status:400, header: corsHeaders });
         }
 
-        else return new NextResponse(JSON.stringify({msg:'message sent'}), {status:201}
+        else return new NextResponse(JSON.stringify({msg:'Message sent'}), {status:201, header: corsHeaders}
 
-        )   
+        );
     } 
     catch (error) {
-        return new NextResponse(JSON.stringify({msg:'Server error! Try later'}), {status:500});
+        return new NextResponse(JSON.stringify({msg:'Server error! Try later'}), {status:500, header: corsHeader });
         
     }
 }
