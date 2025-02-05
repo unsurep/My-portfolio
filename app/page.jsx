@@ -31,6 +31,8 @@ const Home = () => {
       <section id='contact' className='snap-start'>
         <ContactMe/>
       </section>
+
+      <div></div>
       
 
     </div>
