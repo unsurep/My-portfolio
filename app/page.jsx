@@ -4,7 +4,8 @@ import Hero from '@/components/Hero'
 import Nav from '@/components/Nav'
 import React from 'react'
 import Skills from '@/components/Skills'
-import Skill from '@/components/Skill'
+import Projects from '@/components/Projects'
+import ContactMe from '@/components/ContactMe'
 
 
 
@@ -21,7 +22,14 @@ const Home = () => {
 
       <section id='skills' className='snap-start'>
         <Skills/>
-        
+      </section>
+
+      <section id='projects' className='snap-start '>
+        <Projects/>
+      </section>
+
+      <section id='contact' className='snap-start'>
+        <ContactMe/>
       </section>
       
 
