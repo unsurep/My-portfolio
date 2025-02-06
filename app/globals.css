@@ -34,11 +34,16 @@
 
 
 
-/* *{
-  padding: 0;
+*{
+  /* padding: 0;
   margin: 0;
-  border: solid 1px red;
-} */
+  border: solid 1px red; */
+
+  scroll-behavior: smooth;
+}
+
+
+
 
 .swiper {
   width: 100%;

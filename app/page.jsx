@@ -14,6 +14,8 @@ import Skillm from '@/components/Skillm'
 import Skillj from '@/components/Skillj'
 import Skillg from '@/components/Skillg'
 import Skillv from '@/components/Skillv'
+import Link from 'next/link'
+import { FaArrowUp } from "react-icons/fa";
 
 
 
@@ -53,7 +55,12 @@ const Home = () => {
         <ContactMe/>
       </section>
 
-      <div></div>
+      {/* scroll to the top */}
+      <Link href='#hero'>
+        <div className="w-[10px] rounded-full px-3 py-2 md:px-6 md:py-4 md:bg-[#3177A3] items-center justify-center md:ring-8 md:hover:ring-red-300   flex fixed right-10 md:right-16 bottom-0 md:bottom-12"><span className="font-bold "><FaArrowUp /></span></div>
+      </Link>
+
+      
       
 
     </div>
