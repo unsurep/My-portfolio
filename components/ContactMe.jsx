@@ -7,6 +7,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 
+
 const ContactMe = () => {
     const router=useRouter();
 
@@ -52,7 +53,7 @@ const ContactMe = () => {
 
 
             if (res.status===201) {
-                router.replace('/hero')
+                router.replace('/thankyou')
             }
 
             else {
