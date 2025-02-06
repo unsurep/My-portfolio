@@ -23,7 +23,7 @@ const Projects = () => {
       <div className=' w-full snap-x snap-mandatory'>
       {/* Swiper Js */}
       {/* swiper mobile, tablet & laptops responsive */}
-      <div className='w-full'>
+      <div className='w-full mt-[10rem]'>
             <Swiper
               slidesPerView={1}
               spaceBetween={30}
@@ -42,8 +42,9 @@ const Projects = () => {
               <SwiperSlide>
                 <div className=''>
                   <div> <Image src='/blog.png' width={1300} height={1300} alt='image' className='overflow-hidden'/></div>
-                  <div className=' text-gray-500  font-bold underline decoration-black/50'>Blog site</div>
-                  <p className='text-gray-500 text-xs p-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, at earum. Temporibus facilis placeat ducimus! Ab possimus reiciendis eveniet saepe? Odio, ratione itaque excepturi cum vel rem dolores illum, cupiditate iusto qui doloremque ab pariatur. Consectetur fugiat illo dolorum accusamus recusandae itaque voluptas pariatur aspernatur distinctio. Itaque at saepe perspiciatis.</p>
+                  <div className=' text-gray-500 font-bold underline decoration-black/50'>Blog site</div>
+                  <p className='text-gray-800 bg-black/30 flex flex-col gap-1 text-xs p-3'>A Simple Blog site built with Nextjs <br />
+                  <span className='decoration-amber-400 underline cursor-pointer'>https://blog-porject.vercel.app/</span></p>
                 </div>
                 
               </SwiperSlide>
@@ -54,7 +55,8 @@ const Projects = () => {
 
                   <div className=' text-gray-500  font-bold underline decoration-black/50'>Adminlte clone</div>
 
-                  <p className='text-gray-500 text-xs p-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, at earum. Temporibus facilis placeat ducimus! Ab possimus reiciendis eveniet saepe? Odio, ratione itaque excepturi cum vel rem dolores illum, cupiditate iusto qui doloremque ab pariatur. Consectetur fugiat illo dolorum accusamus recusandae itaque voluptas pariatur aspernatur distinctio. Itaque at saepe perspiciatis.</p>
+                  <p className='text-gray-800 bg-cyan-600/30 flex flex-col gap-1 text-xs p-3'>Adminlte clone built with Nextjs <br />
+                  <span className='decoration-amber-400 underline cursor-pointer'>https:</span></p>
                 </div>
               </SwiperSlide>
 
@@ -65,7 +67,8 @@ const Projects = () => {
 
                 <div className=' text-gray-500  font-bold underline decoration-black/50'>PH Hash House Harriers</div>
 
-                <p className='text-gray-500 text-xs p-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, at earum. Temporibus facilis placeat ducimus! Ab possimus reiciendis eveniet saepe? Odio, ratione itaque excepturi cum vel rem dolores illum, cupiditate iusto qui doloremque ab pariatur. Consectetur fugiat illo dolorum accusamus recusandae itaque voluptas pariatur aspernatur distinctio. Itaque at saepe perspiciatis.</p>
+                <p className='text-gray-800 bg-red-600/30 flex flex-col gap-1 text-xs p-3'>Fitness & Beer with Nextjs <br />
+                  <span className='decoration-amber-400 underline cursor-pointer'>https://ph-h3.netlify.app/</span></p>
               </SwiperSlide>
 
               <SwiperSlide>
@@ -74,7 +77,8 @@ const Projects = () => {
 
                  <div className=' text-gray-500  font-bold underline decoration-black/50'>Prompt-cloud</div>
 
-                 <p className='text-gray-500 text-xs p-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, at earum. Temporibus facilis placeat ducimus! Ab possimus reiciendis eveniet saepe? Odio, ratione itaque excepturi cum vel rem dolores illum, cupiditate iusto qui doloremque ab pariatur. Consectetur fugiat illo dolorum accusamus recusandae itaque voluptas pariatur aspernatur distinctio. Itaque at saepe perspiciatis.</p>
+                 <p className='text-gray-800 bg-black/30 flex flex-col gap-1 text-xs p-3'>AI powered Prompt built with Nextjs <br />
+                  <span className='decoration-amber-400 underline cursor-pointer'>https://promptopia-lemon-zeta.vercel.app/</span></p>
                 </div>
               </SwiperSlide>
 
@@ -84,7 +88,8 @@ const Projects = () => {
 
                   <div className=' text-gray-500  font-bold underline decoration-black/50'>Tesla clone</div>
 
-                  <p className='text-gray-500 text-xs p-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, at earum. Temporibus facilis placeat ducimus! Ab possimus reiciendis eveniet saepe? Odio, ratione itaque excepturi cum vel rem dolores illum, cupiditate iusto qui doloremque ab pariatur. Consectetur fugiat illo dolorum accusamus recusandae itaque voluptas pariatur aspernatur distinctio. Itaque at saepe perspiciatis.</p>
+                  <p className='text-gray-800 bg-black/30 flex flex-col gap-1 text-xs p-3'>Tesla Clone built with Nextjs <br />
+                  <span className='decoration-amber-400 underline cursor-pointer'>https://teslaklon.vercel.app/</span></p>
                 </div>
               </SwiperSlide>
 
