@@ -107,10 +107,10 @@ const ContactMe = () => {
             </div>
 
             <form onSubmit={submitHandler} className='flex flex-col space-y-3 w-fit mx-auto '>
-                <div className='md:flex md:space-x-3  space-y-2'>
+                <div className='md:flex md:space-x-3  space-y-'>
                     <input value={name} onChange={(e)=>setName(e.target.value)} placeholder='Name' className='contactInput px-6 py-1 md:px-6 md:py-4' type="text" />
 
-                    <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='contactInput px-6 py-1 ' type="email" />
+                    <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='contactInput px-6 py-1 mt-3' type="email" />
                 </div>
 
                 <input onChange={(e)=>setSubject(e.target.value)} placeholder='Subject' className='contactInput mx-[1rem] px-6 py-1' type="text" />
