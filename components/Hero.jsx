@@ -29,7 +29,7 @@ const Hero=()=>{
                 <div className="z-20">
                     <h2 className="text-sm uppercase text-gray-500 pb-3 tracking-[13px] md:tracking-[20px]">Web Developer</h2>
                     <h1 className="text-2xl lg:text-4xl font-semibold px-10">
-                        <span className="mr-3">{text}</span>
+                        <span className="mr-3 text-gray-300">{text}</span>
                         <Cursor cursorColor="#F7AB0A"/>
                     </h1>
 
