@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 
 const Nav = () => {
   return (
-    <header className="flex items-start p-5 pt-5 justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="flex items-start p-5 justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center">
       {/* social icons */}
       <motion.div 
       className="flex items-center"

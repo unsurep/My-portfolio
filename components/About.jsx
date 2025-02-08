@@ -31,7 +31,7 @@ const About = () => {
             />
         </motion.div>
 
-        <div className='mt-28 lg:mt-16 pb-10 px-0 md:px-10  text-left w-full  '>
+        <div className='mt-4 lg:mt-16 pb-10 px-0 md:px-10  text-left w-full  '>
             <h4 className='text-base lg:text-lg mb- font-semibold lg:pt-[3rem]'>Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span>  background-</h4>
 
             <p className='text-xs lg:text-base '>I am Louis, result-driven with over 10 years of experience  in administration,

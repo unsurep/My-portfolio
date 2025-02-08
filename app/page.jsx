@@ -33,7 +33,7 @@ const Home = () => {
       <section id='skills' className='snap-start  h-screen items-center px-[1rem] flex flex-col pt-32 '>
         <h3 className='uppercase tracking-[20px] text-gray-500 text-base md:text-2xl '>Skills</h3>
 
-        <h3 className=' uppercase tracking-[3px] text-gray-500 text-[10px] md:text-sm '>Hover over a skill for proficiency</h3>
+        <h3 className=' uppercase tracking-[1px] text-gray-500 text-[12px] md:text-lg '>Hover over a skill for proficiency</h3>
         <div className='grid grid-cols-3 pt-5 gap-3 md:gap-5'>
           <Skill/>
           <Skilll/>

@@ -10,7 +10,7 @@ import { SiMongodb } from "react-icons/si";
 
 const ExperienceCard = () => {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-4 flex-shrink-0 w-[300px] md:w-[400px] snap-center bg-[#292929] p-6 mt-28 md:mt-[14rem] lg:mt-[25rem]  hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-4 flex-shrink-0 w-[300px] md:w-[400px] snap-center bg-[#292929] py-12 mt-32 md:mt-[1rem] hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
       
       <motion.img
         initial={{
