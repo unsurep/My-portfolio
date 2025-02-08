@@ -39,7 +39,7 @@ const About = () => {
             </p>
 
             <p className='text-xs lg:text-base pt-2'>
-                Recently upskilled in  modern digital tools and web technologies,  combining  strong  administrative expertise with problem-solving  abilities to drive  drive  organizational growth. 
+                Recently upskilled in  modern digital tools and web technologies,  combining  strong  administrative expertise with problem-solving  abilities to drive organizational growth. 
             </p>
 
             <p className='text-xs lg:text-base pt-2'>

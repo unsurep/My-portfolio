@@ -15,8 +15,8 @@ const ContactMe = () => {
     const [email, setEmail]=useState('');
     const [subject, setSubject]=useState('');
     const [message, setMessage]=useState('');
-    const [error, setError]=useState(true)
-    const [loading, setLoading]=useState(true)
+    const [error, setError]=useState(false)
+    const [loading, setLoading]=useState(false)
 
     // form validation
 
@@ -73,17 +73,17 @@ const ContactMe = () => {
 
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl justify-center mx-auto items-center'>
-        <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-500 text-lg md:text-2xl'>Contact</h3>
+        <h3 className='absolute top-16 uppercase tracking-[20px] text-gray-500 text-lg md:text-2xl'>Contact</h3>
 
         {/* error display */}
         {
-            error && <p className='text-red-500 text-sm absolute top-[5.5rem] blink-1'>{error}</p>
+            error && <p className='text-red-500 text-sm absolute top-[7rem] blink-1'>{error}</p>
         }
 
 
 
 
-        <div className='flex flex-col space-y-4  '>
+        <div className='flex flex-col space-y-4 mt-16 '>
             <h4 className='text-sm md:text-3xl font-semibold text-center'>
                 I have just what you need.{" "}
                 <span className='decoration-amber-400 underline'>Lets Talk</span>
