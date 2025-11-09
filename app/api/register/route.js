@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 
 // Enable CORS
 const corsHeaders = {
-    "Access-Control-Allow-Origin": "*", // Allow all origins (change to your frontend URL in production)
-    "Access-Control-Allow-Methods": "POST, OPTIONS", // Allow only POST and OPTIONS
-    "Access-Control-Allow-Headers": "Content-Type, Authorization", // Allow necessary headers
+    "Access-Control-Allow-Origin": "*", 
+    "Access-Control-Allow-Methods": "POST, OPTIONS", 
+    "Access-Control-Allow-Headers": "Content-Type, Authorization", 
 };
 
 export async function OPTIONS() {

@@ -2,65 +2,59 @@
 
 import axios from 'axios';
 import React, { useState } from 'react'
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
-
+import portfolioData from '@/data/portfolioData';
 
 const ContactMe = () => {
     const router=useRouter();
+    const { header, callToAction } = portfolioData;
+    const { contactLinks, availability } = header;
 
     const [name, setName]=useState('');
     const [email, setEmail]=useState('');
     const [subject, setSubject]=useState('');
     const [message, setMessage]=useState('');
-    const [error, setError]=useState(false)
-    const [loading, setLoading]=useState(false)
-
-    // form validation
+    const [error, setError]=useState('');
+    const [loading, setLoading]=useState(false);
 
     const submitHandler= async (e)=>{
         e.preventDefault();
 
         if (!name || !email || !subject || !message) {
             setError ('Error! All fields are required.');
-
-            // set Error timeout
-            setTimeout(()=>{
-                setError(false);
-                setName('');
-                setEmail('');
-                setSubject('');
-                setMessage('');
-            }, 3000)
             return;
         }
         setLoading(true);
         setError('');
 
-        // this frontend api is configured to all cors
         try {
             const res = await axios.post (`${process.env.NEXT_PUBLIC_ENDPOINT}/register`, {name, email, subject, message},
                 {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    withCredentials:false // Set to true if using authentication tokens
+                    withCredentials:false
                 }
 
             );
 
 
             if (res.status===201) {
+                setName('');
+                setEmail('');
+                setSubject('');
+                setMessage('');
                 router.replace('/thankyou')
             }
 
             else {
-                setError('Form Submission Failed. Try again!')
+                setError('Form submission failed. Try again!');
             }
             
-        } catch (error) {
+        } 
+        
+        catch (error) {
             setError ('Server error! Try again!')  
         }
 
@@ -69,58 +63,70 @@ const ContactMe = () => {
         }
     }
 
-        
+    const renderIcon = (type) => {
+      switch (type) {
+        case 'Email':
+          return <FaEnvelope className='text-amber-400 text-lg animate-pulse'/>;
+        case 'Phone':
+          return <FaPhoneAlt className='text-amber-400 text-lg animate-pulse'/>;
+        default:
+          return <FaMapMarkerAlt className='text-amber-400 text-lg animate-pulse'/>;
+      }
+    };
 
   return (
-    <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl justify-center mx-auto items-center'>
-        <h3 className='absolute top-16 uppercase tracking-[20px] text-gray-500 text-lg md:text-2xl'>Contact</h3>
+    <div className='min-h-screen flex relative flex-col text-center md:text-left max-w-6xl px-6 md:px-10 justify-center mx-auto items-center'>
+        <h3 className='absolute top-16 uppercase tracking-[16px] text-gray-500 text-base md:text-2xl'>Contact</h3>
 
-        {/* error display */}
-        {
-            error && <p className='text-red-500 text-sm absolute top-[7rem] blink-1'>{error}</p>
-        }
+        {error && (
+            <p className='text-red-500 text-sm absolute top-[7rem]'>{error}</p>
+        )}
 
-
-
-
-        <div className='flex flex-col space-y-4 mt-16 '>
-            <h4 className='text-sm md:text-3xl font-semibold text-center'>
-                I have just what you need.{" "}
-                <span className='decoration-amber-400 underline'>Lets Talk</span>
-            </h4>
-
-            <div className='space-y-1'>
-                <div className='flex items-center space-x-3 justify-center'>
-                    <FaPhoneAlt className='text-amber-400 animate-pulse text-lg'/>
-                    <p className='text-xs md:text-lg'>+23491-466-7394</p>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 w-full mt-24'>
+            <div className='flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur shadow-lg shadow-black/30'>
+                <h4 className='text-lg md:text-3xl font-semibold text-gray-100'>
+                    {callToAction.message}
+                </h4>
+                <p className='text-sm text-gray-300/90 leading-relaxed'>
+                    {callToAction.subtext}
+                </p>
+                <div className='flex items-center gap-2 rounded-full border border-[#F7AB0A]/40 px-4 py-2 text-xs uppercase tracking-[3px] text-[#F7AB0A] w-fit'>
+                    <span className='h-2 w-2 rounded-full bg-emerald-400 animate-pulse'/>
+                    {availability.status} · {availability.note}
                 </div>
-
-                <div className='flex items-center space-x-3 justify-center'>
-                    <FaEnvelope className='text-amber-400 text-lg animate-pulse'/>
-                    <p className='text-xs md:text-lg'>wedevilleg@gmail.com</p>
+                <div className='space-y-3 pt-2'>
+                    {contactLinks.map((link) => (
+                        <a key={link.type} href={link.href} target={link.type === 'Location' ? '_blank' : undefined} rel='noreferrer' className='flex items-center gap-3 text-sm md:text-base text-gray-200 hover:text-[#F7AB0A] transition'>
+                            {renderIcon(link.type)}
+                            <span>{link.label}</span>
+                        </a>
+                    ))}
                 </div>
-
-                <div className='flex items-center space-x-3 justify-center'>
-                    <FaMapMarkerAlt className='text-amber-400 text-lg animate-pulse'/>
-                    <p className='text-xs md:text-lg'>Rivers State, Nigeria</p>
+                <div className='flex flex-wrap gap-3 pt-4'>
+                    <a href={callToAction.primary.href} target='_blank' rel='noreferrer' className='rounded-full bg-[#F7AB0A] px-4 py-2 text-xs font-semibold uppercase tracking-[2px] text-black transition hover:bg-[#f9ba31]'>
+                        {callToAction.primary.label}
+                    </a>
+                    <a href={callToAction.secondary.href} className='rounded-full border border-[#F7AB0A]/40 px-4 py-2 text-xs font-semibold uppercase tracking-[2px] text-[#F7AB0A] transition hover:bg-[#F7AB0A]/10'>
+                        {callToAction.secondary.label}
+                    </a>
                 </div>
             </div>
 
-            <form onSubmit={submitHandler} className='flex flex-col space-y-3 w-fit mx-auto '>
-                <div className='md:flex md:space-x-3  space-y-'>
-                    <input value={name} onChange={(e)=>setName(e.target.value)} placeholder='Name' className='contactInput px-6 py-1 md:px-6 md:py-4' type="text" />
+            <form onSubmit={submitHandler} className='flex flex-col gap-4 rounded-3xl border border-white/10 bg-black/40 p-8 backdrop-blur shadow-lg shadow-black/40'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                    <input value={name} onChange={(e)=>setName(e.target.value)} placeholder='Name' className='contactInput px-4 py-3 md:px-6 md:py-4' type="text" />
 
-                    <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='contactInput px-6 py-1 mt-3' type="email" />
+                    <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='contactInput px-4 py-3 md:px-6 md:py-4' type="email" />
                 </div>
 
-                <input onChange={(e)=>setSubject(e.target.value)} placeholder='Subject' className='contactInput mx-[1rem] px-6 py-1' type="text" />
+                <input value={subject} onChange={(e)=>setSubject(e.target.value)} placeholder='Subject' className='contactInput px-4 py-3 md:px-6 md:py-4' type="text" />
 
-                <textarea onChange={(e)=>setMessage(e.target.value)} placeholder='Message' className='contactInput mx-[1rem] px-6 py-2'/>
+                <textarea value={message} onChange={(e)=>setMessage(e.target.value)} placeholder='Message' className='contactInput px-4 py-3 md:px-6 md:py-4 min-h-[160px]'/>
 
-                <button type='submit' className='bg-amber-400 py-3 relative rounded-md  text-black font-bold items-center justify-center'>{loading ? (<div className='loader mx-auto absolute top-0 left-0'></div>) : 'Submit'}</button>
+                <button type='submit' className='bg-amber-400 py-3 relative rounded-full text-black font-bold uppercase tracking-[3px] flex items-center justify-center'>
+                    {loading ? (<div className='loader mx-auto absolute inset-0 m-auto'></div>) : 'Submit'}
+                </button>
             </form>
-
-
         </div>
     </div>
   )

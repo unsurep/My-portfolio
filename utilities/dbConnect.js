@@ -7,7 +7,7 @@ let isConnected = globalThis.isConnected || false;
 export const dbConnect = async ()=>{
     mongoose.set('strictQuery', true);
 
-    // check if mongodb is defined
+    // check if mongoose is defined
     if(!process.env.MONGODB_URL) {
         console.error("❌ MONGODB-URL is not set")
         return;
@@ -36,6 +36,5 @@ export const dbConnect = async ()=>{
         console.error('❌ MongoDB connection error', error)
         
     }
-
 }
 

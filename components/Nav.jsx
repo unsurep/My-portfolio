@@ -1,96 +1,70 @@
 'use client'
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
+import Link from "next/link";
+import portfolioData from "@/data/portfolioData";
 
 const Nav = () => {
+  const {
+    socialLinks,
+    contactLinks,
+    secondaryCta,
+  } = portfolioData.header;
+  const emailLink =
+    contactLinks.find((link) => link.type === "Email") ?? contactLinks[0];
+
   return (
-    <header className="flex items-start p-5 justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="flex items-start p-5 justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center backdrop-blur-lg bg-black/20 border-b border-white/5">
       {/* social icons */}
-      <motion.div 
-      className="flex items-center"
-      initial={{
-        x:-500,
-        opacity:0,
-        scale:0.5}}
-
-        animate={{
-        x:0,
-        opacity:1,
-        scale:1
+      <motion.div
+        className="flex items-center gap-2"
+        initial={{
+          x: -500,
+          opacity: 0,
+          scale: 0.5,
         }}
-        
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
         transition={{
-            duration:1.5,
-        }}>
-        
-        <SocialIcon
-          url="https://linkedin.com/in/louisvwede"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-          network="linkedin"
-          style={{ height: 40, width: 40 }}
-          
-        />
-
-        <SocialIcon
-          url="https://github.com/unsurep"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-          network="github"
-          style={{ height: 40, width: 40 }}
-          
-        />
-
-        <SocialIcon
-          url="https://www.tiktok.com/@onesureplayer?_t=ZM-8tSCSG1nYjG&_r=1"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-          network="tiktok"
-          style={{ height: 40, width: 40 }}
-        />
-
-        <SocialIcon
-          url="https://x.com/LVwedee"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-          network="twitter"
-          style={{ height: 40, width: 40 }}
-        />
-
-        <SocialIcon
-          url="https://wa.me/+2348081808904"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-          network="whatsapp"
-          style={{ height: 40, width: 40 }}
-        />
+          duration: 1.1,
+        }}
+      >
+        {socialLinks.map(({ type, href }) => (
+          <SocialIcon
+            key={type}
+            url={href}
+            target="_blank"
+            fgColor="gray"
+            bgColor="transparent"
+            network={type.toLowerCase()}
+            style={{ height: 38, width: 38 }}
+          />
+        ))}
       </motion.div>
 
       {/* email icon */}
-      <motion.div 
-      className="flex items-center"
-      initial={{
-        x:500,
-        opacity:0,
-        scale:0.5,
-      }}
-      animate={{
-        x:0,
-        opacity:1,
-        scale:1,
-      }}
-      transition={{
-        duration:1.5
-      }}
+      <motion.div
+        className="flex items-center gap-4"
+        initial={{
+          x: 500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.1,
+        }}
       >
         <SocialIcon
-          url="mailto:wedevilleg@gmail.com"
+          url={emailLink.href}
           target="_blank"
           fgColor="gray"
           bgColor="transparent"
@@ -98,9 +72,19 @@ const Nav = () => {
           style={{ height: 40, width: 40 }}
         />
 
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get in Touch
-        </p>
+        <div className="hidden md:flex flex-col items-start">
+          <p className="uppercase text-xs tracking-[3px] text-gray-400">
+            Get in touch
+          </p>
+          <span className="text-sm text-gray-300">{emailLink.label}</span>
+        </div>
+
+        <Link
+          href={secondaryCta.href}
+          className="rounded-full border border-[#F7AB0A]/40 px-4 py-2 text-xs font-semibold uppercase tracking-[2px] text-[#F7AB0A] transition hover:bg-[#F7AB0A] hover:text-black"
+        >
+          {secondaryCta.label}
+        </Link>
       </motion.div>
     </header>
   );

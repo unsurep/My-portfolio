@@ -1,34 +1,38 @@
 'use client';
 import Image from "next/image";
 import React from "react";
-import {motion} from 'motion/react'
+import { motion } from "motion/react";
 
-const Skill =({directionLeft})=>{
-    return(
-        <div className="group relative flex cursor-pointer">
-            <motion.div
-                initial={{
-                     x: directionLeft ? -200 : 200,
-                    opacity: 0,
-                }}
-                transition={{ duration: 1 }}
-                whileInView={{ opacity: 1, x: 0 }}>
-                <Image src='/html.svg' width={100} height={100} alt="logo" className="rounded-full border-gray-500 object-cover w-16 h-16 xl:w-24 xl:h-24 filter group-hover:grayscale transition duration-300 ease-in-out"/>
-            </motion.div>
+const Skill = ({ skill, directionLeft = false }) => {
+  const { icon, name, proficiency } = skill;
 
-            <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-16 w-16 md:w-16 md:h-16 xl:w-24 xl:h-24 rounded-full z-0">
-                <div className="flex items-center justify-center h-full">
-                    <p className="text-xl font-bold text-black opacity-100">97%</p>
-                </div>
-            </div>
+  return (
+    <div className="group relative flex cursor-pointer">
+      <motion.div
+        initial={{
+          x: directionLeft ? -100 : 100,
+          opacity: 0,
+        }}
+        transition={{ duration: 0.9 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="rounded-2xl border border-white/10 bg-black/40 p-4"
+      >
+        <Image
+          src={icon}
+          width={96}
+          height={96}
+          alt={`${name} icon`}
+          className="h-16 w-16 xl:h-20 xl:w-20 object-contain"
+        />
+      </motion.div>
 
-               
-
-        </div>
-    );
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 rounded-2xl border border-[#F7AB0A]/50 bg-[#F7AB0A]/95 text-black opacity-0 transition duration-300 ease-in-out group-hover:opacity-100">
+        <p className="text-xl font-bold">{proficiency}%</p>
+        <span className="text-xs uppercase tracking-[2px]">{name}</span>
+      </div>
+    </div>
+  );
 };
 
 export default Skill;
-
-
-

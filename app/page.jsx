@@ -3,19 +3,12 @@ import WorkExperience from '@/components/WorkExperience'
 import Hero from '@/components/Hero'
 import Nav from '@/components/Nav'
 import React from 'react'
-import Skill from '@/components/Skill'
+import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import ContactMe from '@/components/ContactMe'
-import Skilll from '@/components/Skilll'
-import Skillr from '@/components/Skillr'
-import Skillt from '@/components/Skillt'
-import Skilln from '@/components/Skilln'
-import Skillm from '@/components/Skillm'
-import Skillj from '@/components/Skillj'
-import Skillg from '@/components/Skillg'
-import Skillv from '@/components/Skillv'
 import Link from 'next/link'
 import { FaArrowUp } from "react-icons/fa";
+import CallToAction from '@/components/CallToAction'
 
 
 
@@ -31,20 +24,7 @@ const Home = () => {
       </section>
 
       <section id='skills' className='snap-start  h-screen items-center px-[1rem] flex flex-col pt-32 '>
-        <h3 className='uppercase tracking-[20px] text-gray-500 text-base md:text-2xl '>Skills</h3>
-
-        <h3 className=' uppercase tracking-[1px] text-gray-500 text-[12px] md:text-lg '>Hover over a skill for proficiency</h3>
-        <div className='grid grid-cols-3 pt-5 gap-3 md:gap-5'>
-          <Skill/>
-          <Skilll/>
-          <Skillr/>
-          <Skillt/>
-          <Skilln/>
-          <Skillm/>
-          <Skillj/>
-          <Skillg/>
-          <Skillv/>
-        </div>
+        <Skills/>
       </section>
 
       <section id='projects' className='snap-start '>
@@ -53,6 +33,10 @@ const Home = () => {
 
       <section id='contact' className='snap-end'>
         <ContactMe/>
+      </section>
+
+      <section className='snap-center'>
+        <CallToAction/>
       </section>
 
       {/* scroll to the top */}
