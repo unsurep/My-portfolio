@@ -14,11 +14,11 @@
   }
 }
 
-/* body {
+body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  font-family: var(--font-outfit), sans-serif;
+}
 
 /* css style for the buttons  */
 @layer components {
