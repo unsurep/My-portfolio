@@ -3,11 +3,11 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
-import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import portfolioData from '@/data/portfolioData';
 
 const ContactMe = () => {
-    const router=useRouter();
     const { header, callToAction } = portfolioData;
     const { contactLinks, availability } = header;
 
@@ -15,18 +15,16 @@ const ContactMe = () => {
     const [email, setEmail]=useState('');
     const [subject, setSubject]=useState('');
     const [message, setMessage]=useState('');
-    const [error, setError]=useState('');
     const [loading, setLoading]=useState(false);
 
     const submitHandler= async (e)=>{
         e.preventDefault();
 
         if (!name || !email || !subject || !message) {
-            setError ('Error! All fields are required.');
+            toast.error('Error! All fields are required.');
             return;
         }
         setLoading(true);
-        setError('');
 
         try {
             const res = await axios.post (`${process.env.NEXT_PUBLIC_ENDPOINT}/register`, {name, email, subject, message},
@@ -45,17 +43,17 @@ const ContactMe = () => {
                 setEmail('');
                 setSubject('');
                 setMessage('');
-                router.replace('/thankyou')
+                toast.success('Message sent successfully! I will reply soon.');
             }
 
             else {
-                setError('Form submission failed. Try again!');
+                toast.error('Form submission failed. Try again!');
             }
             
         } 
         
         catch (error) {
-            setError ('Server error! Try again!')  
+            toast.error('Server error! Try again!');
         }
 
         finally {
@@ -78,9 +76,7 @@ const ContactMe = () => {
     <div className='min-h-screen flex relative flex-col text-center md:text-left max-w-6xl px-6 md:px-10 justify-center mx-auto items-center'>
         <h3 className='absolute top-16 uppercase tracking-[16px] text-gray-500 text-base md:text-2xl'>Contact</h3>
 
-        {error && (
-            <p className='text-red-500 text-sm absolute top-[7rem]'>{error}</p>
-        )}
+        <ToastContainer position="top-center" autoClose={4000} theme="dark"/>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 w-full mt-24'>
             <div className='flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur shadow-lg shadow-black/30'>
