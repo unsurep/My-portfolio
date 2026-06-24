@@ -15,10 +15,10 @@ const Nav = () => {
     contactLinks.find((link) => link.type === "Email") ?? contactLinks[0];
 
   return (
-    <header className="flex items-start p-5 justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center backdrop-blur-lg bg-black/20 border-b border-white/5">
+    <header className="flex items-center gap-3 p-3 sm:p-5 justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center backdrop-blur-lg bg-black/20 border-b border-white/5">
       {/* social icons */}
       <motion.div
-        className="flex items-center gap-2"
+        className="flex items-center flex-wrap gap-0.5 sm:gap-2 shrink"
         initial={{
           x: -500,
           opacity: 0,
@@ -48,7 +48,7 @@ const Nav = () => {
 
       {/* email icon */}
       <motion.div
-        className="flex items-center gap-4"
+        className="flex items-center gap-2 sm:gap-4 shrink-0"
         initial={{
           x: 500,
           opacity: 0,

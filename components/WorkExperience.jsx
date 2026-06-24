@@ -11,7 +11,7 @@ const WorkExperience = () => {
       initial={{opacity: 0 }}
       whileInView={{opacity: 1 }}
       transition={{duration:  1.5 }}
-      className='h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-6 md:px-10 justify-evenly mx-auto items-center'>
+      className='min-h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-6 md:px-10 justify-evenly mx-auto items-center py-28 md:py-20'>
       <h3  className='absolute top-24  uppercase tracking-[16px] text-gray-500 text-base md:text-2xl'>Experience</h3>
 
       {/* ExperienceCard section */}

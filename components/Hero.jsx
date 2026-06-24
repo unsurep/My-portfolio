@@ -26,7 +26,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="snap-start">
-      <div className="h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-12 px-6 md:px-12 lg:px-20">
+      <div className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-12 px-6 md:px-12 lg:px-20 py-24 md:py-0">
         <div className="flex-1 max-w-3xl flex flex-col items-center md:items-start text-center md:text-left gap-6">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -42,7 +42,7 @@ const Hero = () => {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-100 leading-tight">
               {title}
             </h1>
-            <h2 className="text-base md:text-lg text-[#F7AB0A]/90 uppercase tracking-[6px]">
+            <h2 className="text-sm md:text-lg text-[#F7AB0A]/90 uppercase tracking-[2px] md:tracking-[6px] break-words">
               {text} <Cursor cursorColor="#F7AB0A" />
             </h2>
             <p className="text-sm md:text-base text-gray-300/90 leading-relaxed">
@@ -75,7 +75,7 @@ const Hero = () => {
               width={240}
               height={240}
               alt="Portrait of Louis Umukoro"
-              className="relative z-10 rounded-full border-4 border-[#F7AB0A]/40 object-cover shadow-xl shadow-[#F7AB0A]/20"
+              className="relative z-10 h-40 w-40 sm:h-52 sm:w-52 md:h-60 md:w-60 rounded-full border-4 border-[#F7AB0A]/40 object-cover shadow-xl shadow-[#F7AB0A]/20"
               priority
             />
           </div>

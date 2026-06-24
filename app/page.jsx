@@ -15,7 +15,7 @@ import CallToAction from '@/components/CallToAction'
 
 const Home = () => {
   return (
-    <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+    <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-proximity overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Nav/>
       <Hero/>
       <About/>
@@ -23,7 +23,7 @@ const Home = () => {
         <WorkExperience/>
       </section>
 
-      <section id='skills' className='snap-start  h-screen items-center px-[1rem] flex flex-col pt-32 '>
+      <section id='skills' className='snap-start min-h-screen items-center px-[1rem] flex flex-col pt-24 md:pt-32 pb-16 '>
         <Skills/>
       </section>
 
@@ -40,8 +40,8 @@ const Home = () => {
       </section>
 
       {/* scroll to the top */}
-      <Link href='#hero'>
-        <div className="w-[10px] rounded-full px-3 py-2 md:px-6 md:py-4 md:bg-[#3177A3] items-center justify-center md:ring-8 md:hover:ring-red-300   flex fixed right-10 md:right-16 bottom-0 md:bottom-12"><span className="font-bold "><FaArrowUp /></span></div>
+      <Link href='#hero' aria-label='Scroll to top'>
+        <div className="h-11 w-11 md:h-14 md:w-14 rounded-full bg-[#3177A3] hover:bg-[#3d8cbf] items-center justify-center ring-4 md:ring-8 ring-[#3177A3]/30 md:hover:ring-red-300 transition-all flex fixed right-5 md:right-16 bottom-5 md:bottom-12 z-30"><span className="font-bold text-white"><FaArrowUp /></span></div>
       </Link>
 
       

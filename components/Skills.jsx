@@ -19,10 +19,10 @@ const Skills = () => {
         <div className='w-full space-y-10'>
           {skills.categories.map((category) => (
             <div key={category.name}>
-              <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4 px-2'>
+              {/* <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4 px-2'>
                 <h4 className='text-lg font-semibold text-gray-100'>{category.name}</h4>
                 <span className='text-xs uppercase tracking-[2px] text-gray-500'>Tap or hover on desktop to reveal proficiency</span>
-              </div>
+              </div> */}
               <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
                 {category.skills.map((skillItem, index) => (
                   <Skill key={skillItem.name} skill={skillItem} directionLeft={index % 2 === 0}/>
